@@ -37,7 +37,6 @@ export class PersonaService {
 
     editarUsuario(id,nombre,apellido, tipo, numero, direccion, correo): any  {
     var param = {"IdUser": id,"Identidad": null,"Nombre": nombre, "Apellido": apellido, "Direccion": direccion, "DniNumber": numero, "DniType": tipo, "Email": correo};
-    debugger;
     return this.http.put<any[]>(this.apiUrl+"/api/v1.0/Personas",param )
       .pipe(map(data => data));
     }
