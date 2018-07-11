@@ -1,0 +1,110 @@
+<div class="content-heading">
+    <div>Usuarios
+        <small>Alta,Baja,Modificación</small>
+    </div>
+</div>
+
+<div class="row" >
+      
+    <div class="col-lg-6">
+        
+ <div class="form-group">
+    <form  class="form-validate mb-3" >
+        <div class="form-group">
+            <label class="text-muted mb-1">Nombre</label>
+            <div class="input-group with-focus">
+                <input class="form-control border-right-0" type="text"  placeholder="Ingresar nombre" [ngModelOptions]="{standalone: true}" autocomplete="off" [(ngModel)]="nombre" required="" />
+                <div class="input-group-append">
+                    <span class="input-group-text fa fa-envelope text-muted bg-transparent border-left-0"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="text-muted mb-1">Apellido</label>
+            <div class="input-group with-focus">
+                <input class="form-control border-right-0" type="text"  placeholder="Ingresar apellido" [ngModelOptions]="{standalone: true}" autocomplete="off" [(ngModel)]="apellido" required="" />
+                <div class="input-group-append">
+                    <span class="input-group-text fa fa-envelope text-muted bg-transparent border-left-0"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="text-muted mb-1">Correo</label>
+            <div class="input-group with-focus">
+                <input class="form-control border-right-0" type="text" placeholder="Ingresar correo" [ngModelOptions]="{standalone: true}" autocomplete="off" [(ngModel)]="correo" required="" />
+                <div class="input-group-append">
+                    <span class="input-group-text fa fa-envelope text-muted bg-transparent border-left-0"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="text-muted mb-1">Dirección</label>
+            <div class="input-group with-focus">
+                <input class="form-control border-right-0" type="text"  placeholder="Ingresar dirección" [ngModelOptions]="{standalone: true}" autocomplete="off" [(ngModel)]="direccion" required="" />
+                <div class="input-group-append">
+                    <span class="input-group-text fa fa-envelope text-muted bg-transparent border-left-0"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="text-muted mb-1">Tipo Identidad</label>
+            <div class="input-group with-focus">
+                <input class="form-control border-right-0" type="text"  placeholder="Ingrese tipo" [ngModelOptions]="{standalone: true}" autocomplete="off" [(ngModel)]="tipo" required="" />
+                <div class="input-group-append">
+                    <span class="input-group-text fa fa-envelope text-muted bg-transparent border-left-0"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="text-muted mb-1">Número Identidad</label>
+            <div class="input-group with-focus">
+                <input class="form-control border-right-0" type="number"  placeholder="Ingresar número" [ngModelOptions]="{standalone: true}" autocomplete="off" [(ngModel)]="numero" required="" />
+                <div class="input-group-append">
+                    <span class="input-group-text fa fa-envelope text-muted bg-transparent border-left-0"></span>
+                </div>
+            </div>
+        </div>
+
+    
+        <button class="btn btn-block btn-primary mt-3" type="button" (click)="altaUsuario()" >{{agregar}}</button>
+    </form> 
+</div>
+
+</div>
+<div class="col-lg-6">    
+<div class="card card-default">
+    <div class="card-header"></div>
+    <div class="card-body">
+    <div class="table-responsive">
+        <table class="table" >
+            <thead>
+                <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dirección</th>
+                <th>Identidad tipo</th>
+                <th>Identidad número</th>
+                <th>Correo</th>
+                
+                </tr>
+            </thead>
+            <tbody >
+                
+                <tr  *ngFor="let user of unarray" class="table-secondary">
+                <td>{{user.nombre}}</td>
+                <td>{{user.apellido}}</td>
+                <td>{{user.direccion}}</td>
+                <td>{{user.dniType}}</td>
+                <td>{{user.dniNumber}}</td>
+                <td>{{user.email}}</td>
+                
+                <td  ><button class="mb-1 btn btn-info btn-sm" (click)="eliminar(user)" type="button">Eliminar</button></td>
+                <td  ><button class="mb-1 btn btn-info btn-sm" (click)="editar(user)" type="button">Editar</button></td>
+            </tr>
+            
+            </tbody>
+        </table>  
+    </div>
+</div>
+</div>
+</div>
